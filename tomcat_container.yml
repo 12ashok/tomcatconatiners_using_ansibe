@@ -1,0 +1,11 @@
+---
+- name: to start tomcat container
+  hosts: dev
+  tasks:
+   - name: tomcat container 
+     docker_container:
+      image: tomcat
+     
+      name: "cat{{item}}"
+     
+     with_sequence: count=11
